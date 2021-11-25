@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Wifi6EServer</string>
+
+    <string name="intent_name_arr_wifi6e">wifi6e_data_list</string>
+    <string name="intent_name_arr_wifi6">wifi6_data_list</string>
+    <string name="intent_name_arr_wifi5">wifi5_data_list</string>
+    <string name="intent_name_arr_5g">5g_data_list</string>
+    <string name="intent_name_arr_lte">lte_data_list</string>
+</resources>

@@ -1,0 +1,3 @@
+rootProject.name = "GaonNetworkSpeedCheckerServer"
+include ':app'
+include ':speedometer'

@@ -1,0 +1,1218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03061e">
+
+    <TextView
+        android:id="@+id/TVTopAppTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        android:includeFontPadding="false"
+        android:text="WIFI6E 속도 측정"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/BtnCompareResult"
+        app:layout_constraintHeight_percent="0.04651781"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/BtnCompareResult"
+        app:layout_constraintWidth_percent="0.12890625" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/IVTopTitleLine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_top_title_line"
+        app:layout_constraintBottom_toBottomOf="@id/BtnCompareResult"
+        app:layout_constraintEnd_toStartOf="@id/BtnCompareResult"
+        app:layout_constraintStart_toEndOf="@id/TVTopAppTitle"
+        app:layout_constraintTop_toTopOf="@id/BtnCompareResult" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnCompareResult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="23.8dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/bg_btn_result"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        android:includeFontPadding="false"
+        android:text="결과비교"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.101010101"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.14609375" />
+
+    <!-- Wifi6e -->
+    <com.afra55.speedometer.SpeedometerDialog
+        android:id="@+id/speedometer_wifi6e"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.200514648"
+        app:layout_constraintWidth_percent="0.2015625"
+        app:meterBg="@drawable/speedometer_bg_wifi6e_checking"
+        app:meterCenterDesc="Mbps"
+        app:meterDividerAreaNumber="8"
+        app:meterHideCenterNumber="true"
+        app:meterMaskBg="@drawable/speedometer_mask_wifi6e_checking"
+        app:meterNumberLimitTextColor="#E30808"
+        app:meterNumberMargin="32dp"
+        app:meterNumberSelectedTextColor="#FFFFFF"
+        app:meterNumberTextColor="#FFFFFF"
+        app:meterNumberTextSize="12sp"
+        app:meterPointer="@drawable/speedometer_pointer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLCheckDataWifi6e"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/speedometer_wifi6e"
+        app:layout_constraintStart_toStartOf="@id/speedometer_wifi6e"
+        app:layout_constraintTop_toBottomOf="@id/speedometer_wifi6e"
+        app:layout_constraintWidth_percent="0.14">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi6eDownload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="다운로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi6eDownload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi6eDownload"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi6eDownload"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi6eDownload"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6eDownload" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi6eUpload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi6eDownload">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="업로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi6eUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi6eUpload"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi6eUpload"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi6eUpload"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6eUpload" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi6eDelayTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6eUpload">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지연시간"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi6eDelayTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi6eDelayTime"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi6eDelayTime"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi6eDelayTime"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6eDelayTime" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi6eZitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi6eDelayTime">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지터"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi6eZitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi6eZitter"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi6eZitter"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi6eZitter"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6eZitter" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:includeFontPadding="false"
+            android:text="WiFi 6E"
+            android:textAlignment="center"
+            android:textColor="#E8CD72"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi6eZitter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 5G -->
+    <com.afra55.speedometer.SpeedometerDialog
+        android:id="@+id/speedometer_5g"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/speedometer_wifi6e"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.360241457"
+        app:layout_constraintWidth_percent="0.17578125"
+        app:meterBg="@drawable/speedometer_bg"
+        app:meterCenterDesc="Mbps"
+        app:meterDividerAreaNumber="8"
+        app:meterHideCenterNumber="true"
+        app:meterMaskBg="@drawable/speedometer_mask_other"
+        app:meterNumberLimitTextColor="#E30808"
+        app:meterNumberMargin="32dp"
+        app:meterNumberSelectedTextColor="#FFFFFF"
+        app:meterNumberTextColor="#FFFFFF"
+        app:meterNumberTextSize="12sp"
+        app:meterPointer="@drawable/speedometer_pointer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLCheckData5g"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/speedometer_5g"
+        app:layout_constraintStart_toStartOf="@id/speedometer_5g"
+        app:layout_constraintTop_toBottomOf="@id/speedometer_5g"
+        app:layout_constraintWidth_percent="0.14">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckData5gDownload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="다운로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckData5gDownload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckData5gDownload"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckData5gDownload"
+            app:layout_constraintStart_toStartOf="@id/LLCheckData5gDownload"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckData5gDownload" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckData5gUpload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckData5gDownload">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="업로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckData5gUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckData5gUpload"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckData5gUpload"
+            app:layout_constraintStart_toStartOf="@id/LLCheckData5gUpload"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckData5gUpload" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckData5gDelayTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckData5gUpload">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지연시간"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckData5gDelayTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckData5gDelayTime"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckData5gDelayTime"
+            app:layout_constraintStart_toStartOf="@id/LLCheckData5gDelayTime"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckData5gDelayTime" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckData5gZitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckData5gDelayTime">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지터"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckData5gZitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckData5gZitter"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckData5gZitter"
+            app:layout_constraintStart_toStartOf="@id/LLCheckData5gZitter"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckData5gZitter" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:includeFontPadding="false"
+            android:text="5G"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckData5gZitter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- WIFI 6 -->
+    <com.afra55.speedometer.SpeedometerDialog
+        android:id="@+id/speedometer_wifi6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/speedometer_wifi6e"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.360241457"
+        app:layout_constraintWidth_percent="0.17578125"
+        app:meterBg="@drawable/speedometer_bg"
+        app:meterCenterDesc="Mbps"
+        app:meterDividerAreaNumber="8"
+        app:meterHideCenterNumber="true"
+        app:meterMaskBg="@drawable/speedometer_mask_other"
+        app:meterNumberLimitTextColor="#E30808"
+        app:meterNumberMargin="32dp"
+        app:meterNumberSelectedTextColor="#FFFFFF"
+        app:meterNumberTextColor="#FFFFFF"
+        app:meterNumberTextSize="12sp"
+        app:meterPointer="@drawable/speedometer_pointer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLCheckDataWifi6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/speedometer_wifi6"
+        app:layout_constraintStart_toStartOf="@id/speedometer_wifi6"
+        app:layout_constraintTop_toBottomOf="@id/speedometer_wifi6"
+        app:layout_constraintWidth_percent="0.14">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi6Download"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="다운로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi6Download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi6Download"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi6Download"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi6Download"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6Download" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi6Upload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi6Download">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="업로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi6Upload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi6Upload"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi6Upload"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi6Upload"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6Upload" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi6DelayTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6Upload">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지연시간"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi6DelayTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi6DelayTime"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi6DelayTime"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi6DelayTime"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6DelayTime" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi6Zitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi6DelayTime">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지터"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi6Zitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi6Zitter"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi6Zitter"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi6Zitter"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi6Zitter" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:includeFontPadding="false"
+            android:text="WiFi 6"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi6Zitter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- LTE -->
+    <com.afra55.speedometer.SpeedometerDialog
+        android:id="@+id/speedometer_lte"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/speedometer_5g"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516085231"
+        app:layout_constraintWidth_percent="0.16015625"
+        app:meterBg="@drawable/speedometer_bg"
+        app:meterCenterDesc="Mbps"
+        app:meterDividerAreaNumber="8"
+        app:meterHideCenterNumber="true"
+        app:meterMaskBg="@drawable/speedometer_mask_other"
+        app:meterNumberLimitTextColor="#E30808"
+        app:meterNumberMargin="32dp"
+        app:meterNumberSelectedTextColor="#FFFFFF"
+        app:meterNumberTextColor="#FFFFFF"
+        app:meterNumberTextSize="12sp"
+        app:meterPointer="@drawable/speedometer_pointer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLCheckDataLTE"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/speedometer_lte"
+        app:layout_constraintStart_toStartOf="@id/speedometer_lte"
+        app:layout_constraintTop_toBottomOf="@id/speedometer_lte"
+        app:layout_constraintWidth_percent="0.14">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataLTEDownload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="다운로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataLTEDownload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataLTEDownload"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataLTEDownload"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataLTEDownload"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataLTEDownload" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataLTEUpload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataLTEDownload">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="업로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataLTEUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataLTEUpload"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataLTEUpload"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataLTEUpload"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataLTEUpload" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataLTEDelayTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataLTEUpload">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지연시간"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataLTEDelayTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataLTEDelayTime"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataLTEDelayTime"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataLTEDelayTime"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataLTEDelayTime" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataLTEZitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataLTEDelayTime">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지터"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataLTEZitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataLTEZitter"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataLTEZitter"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataLTEZitter"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataLTEZitter" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:includeFontPadding="false"
+            android:text="LTE"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataLTEZitter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- WIFI 5 -->
+    <com.afra55.speedometer.SpeedometerDialog
+        android:id="@+id/speedometer_wifi5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@id/speedometer_wifi6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.516085231"
+        app:layout_constraintWidth_percent="0.16015625"
+        app:meterBg="@drawable/speedometer_bg"
+        app:meterCenterDesc="Mbps"
+        app:meterDividerAreaNumber="8"
+        app:meterHideCenterNumber="true"
+        app:meterMaskBg="@drawable/speedometer_mask_other"
+        app:meterNumberLimitTextColor="#E30808"
+        app:meterNumberMargin="32dp"
+        app:meterNumberSelectedTextColor="#FFFFFF"
+        app:meterNumberTextColor="#FFFFFF"
+        app:meterNumberTextSize="12sp"
+        app:meterPointer="@drawable/speedometer_pointer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLCheckDataWifi5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/speedometer_wifi5"
+        app:layout_constraintStart_toStartOf="@id/speedometer_wifi5"
+        app:layout_constraintTop_toBottomOf="@id/speedometer_wifi5"
+        app:layout_constraintWidth_percent="0.14">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi5Download"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="다운로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi5Download"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi5Download"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi5Download"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi5Download"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi5Download" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi5Upload"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi5Download">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="업로드 속도"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi5Upload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- Mbps"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi5Upload"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi5Upload"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi5Upload"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi5Upload" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi5DelayTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi5Upload">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지연시간"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi5DelayTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi5DelayTime"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:layout_marginBottom="2dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi5DelayTime"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi5DelayTime"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi5DelayTime" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/LLCheckDataWifi5Zitter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1.7dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi5DelayTime">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="지터"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/TVCheckDataWifi5Zitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="true"
+                android:text="- ms"
+                android:textAlignment="textEnd"
+                android:textColor="#aeb0b1"
+                android:textSize="12sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:id="@+id/ViewBottomLineCheckDataWifi5Zitter"
+            android:layout_width="0dp"
+            android:layout_height="0.3dp"
+            android:background="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/LLCheckDataWifi5Zitter"
+            app:layout_constraintStart_toStartOf="@id/LLCheckDataWifi5Zitter"
+            app:layout_constraintTop_toBottomOf="@id/LLCheckDataWifi5Zitter" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:includeFontPadding="false"
+            android:text="WiFi 5"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ViewBottomLineCheckDataWifi5Zitter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnCheckAction"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/btn_check_start"
+        android:text="START"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924375332"
+        app:layout_constraintWidth_percent="0.1609375"
+        app:layout_constraintHeight_percent="0.111642743"/>
+
+    <TextView
+        android:id="@+id/TVMeasureComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="측정이 완료되었습니다."
+        android:visibility="gone"
+        android:textSize="24sp"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:includeFontPadding="false"
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/BtnCheckAction" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03061e"
+    tools:context=".ResultActivity">
+
+
+    <TextView
+        android:id="@+id/TVTopAppTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        android:includeFontPadding="false"
+        android:text="WIFI6E 속도 측정"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/BtnMeasureSpeed"
+        app:layout_constraintHeight_percent="0.04651781"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/BtnMeasureSpeed"
+        app:layout_constraintWidth_percent="0.12890625" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/IVTopTitleLine"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg_top_result_title_line"
+        app:layout_constraintBottom_toBottomOf="@id/BtnMeasureSpeed"
+        app:layout_constraintEnd_toStartOf="@id/BtnMeasureSpeed"
+        app:layout_constraintStart_toEndOf="@id/TVTopAppTitle"
+        app:layout_constraintTop_toTopOf="@id/BtnMeasureSpeed" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BtnMeasureSpeed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="23.8dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/bg_btn_measure"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        android:includeFontPadding="false"
+        android:text="속도측정"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.101010101"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.14609375" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLResultTabArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.051834131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/BtnMeasureSpeed"
+        app:layout_constraintWidth_percent="0.3953125">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnResultTabDownload"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_tab_selected"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:includeFontPadding="true"
+            android:text="다운로드 속도"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/BtnResultTabUpload"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnResultTabUpload"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_tab_selected"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:includeFontPadding="true"
+            android:text="업로드 속도"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/BtnResultTabDelayTime"
+            app:layout_constraintStart_toEndOf="@id/BtnResultTabDownload"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnResultTabDelayTime"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_tab_selected"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:includeFontPadding="true"
+            android:text="지연 시간"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/BtnResultTabJitter"
+            app:layout_constraintStart_toEndOf="@id/BtnResultTabUpload"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BtnResultTabJitter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_tab_selected"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:includeFontPadding="true"
+            android:text="지터"
+            android:textColor="#fff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/BtnResultTabDelayTime"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLResultTextDataArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="17.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.186071239"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CLResultTabArea"
+        app:layout_constraintWidth_percent="0.77953125">
+
+        <View
+            android:id="@+id/ViewResultTextDataDivider1"
+            android:layout_width="0.2dp"
+            android:layout_height="0dp"
+            android:background="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/CLResultTextDataLTE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CLResultTextDataLTE"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ViewResultTextDataDivider2"
+            app:layout_constraintStart_toEndOf="@id/ViewResultTextDataDivider1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/TVResultTextDataLTESubject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="LTE"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TVResultTextDataLTEValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:includeFontPadding="false"
+                android:text="3000"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toTopOf="@id/TVResultTextDataLTEUnit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TVResultTextDataLTESubject" />
+
+
+            <TextView
+                android:id="@+id/TVResultTextDataLTEUnit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="Mbps"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/ViewResultTextDataDivider2"
+            android:layout_width="0.2dp"
+            android:layout_height="0dp"
+            android:background="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/CLResultTextData5G"
+            app:layout_constraintStart_toEndOf="@id/CLResultTextDataLTE"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CLResultTextData5G"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ViewResultTextDataDivider3"
+            app:layout_constraintStart_toEndOf="@id/ViewResultTextDataDivider2"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/TVResultTextData5GSubject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="5G"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TVResultTextData5GValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:includeFontPadding="false"
+                android:text="3000"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toTopOf="@id/TVResultTextData5GUnit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TVResultTextData5GSubject" />
+
+
+            <TextView
+                android:id="@+id/TVResultTextData5GUnit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="Mbps"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/ViewResultTextDataDivider3"
+            android:layout_width="0.2dp"
+            android:layout_height="0dp"
+            android:background="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/CLResultTextDataWifi6e"
+            app:layout_constraintStart_toEndOf="@id/CLResultTextData5G"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CLResultTextDataWifi6e"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ViewResultTextDataDivider4"
+            app:layout_constraintStart_toEndOf="@id/ViewResultTextDataDivider3"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi6eSubject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="WIFI 6E"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi6eValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:includeFontPadding="false"
+                android:text="3000"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toTopOf="@id/TVResultTextDataWifi6eUnit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TVResultTextDataWifi6eSubject" />
+
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi6eUnit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="Mbps"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/ViewResultTextDataDivider4"
+            android:layout_width="0.2dp"
+            android:layout_height="0dp"
+            android:background="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/CLResultTextDataWifi6"
+            app:layout_constraintStart_toEndOf="@id/CLResultTextDataWifi6e"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CLResultTextDataWifi6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ViewResultTextDataDivider5"
+            app:layout_constraintStart_toEndOf="@id/ViewResultTextDataDivider4"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi6Subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="WIFI 6"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi6Value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:includeFontPadding="false"
+                android:text="3000"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toTopOf="@id/TVResultTextDataWifi6Unit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TVResultTextDataWifi6Subject" />
+
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi6Unit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="Mbps"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/ViewResultTextDataDivider5"
+            android:layout_width="0.2dp"
+            android:layout_height="0dp"
+            android:background="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/CLResultTextDataWifi5"
+            app:layout_constraintStart_toEndOf="@id/CLResultTextDataWifi6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/CLResultTextDataWifi5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ViewResultTextDataDivider6"
+            app:layout_constraintStart_toEndOf="@id/ViewResultTextDataDivider5"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi5Subject"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="WIFI 5"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi5Value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:includeFontPadding="false"
+                android:text="3000"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="40sp"
+                app:layout_constraintBottom_toTopOf="@id/TVResultTextDataWifi5Unit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/TVResultTextDataWifi5Subject" />
+
+
+            <TextView
+                android:id="@+id/TVResultTextDataWifi5Unit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                android:includeFontPadding="false"
+                android:text="Mbps"
+                android:textAlignment="center"
+                android:textColor="#FFF"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/ViewResultTextDataDivider6"
+            android:layout_width="0.2dp"
+            android:layout_height="0dp"
+            android:background="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CLResultGraphArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="17.6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.494949495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CLResultTextDataArea"
+        app:layout_constraintWidth_percent="0.953125">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/ChartResult"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <TextView
+        android:id="@+id/TVResultChartInfoLTE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LTE"
+        android:textColor="#fff"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:includeFontPadding="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/CLResultGraphArea"
+        app:layout_constraintBottom_toBottomOf="@id/IVResultChartInfoLTE"
+        />
+    
+    <ImageView
+        android:id="@+id/IVResultChartInfoLTE"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="6.8dp"
+        android:src="@drawable/ic_circle_lte"
+        app:layout_constraintEnd_toStartOf="@id/TVResultChartInfoLTE"
+        app:layout_constraintTop_toBottomOf="@id/CLResultGraphArea"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.02658161" />
+
+    <TextView
+        android:id="@+id/TVResultChartInfo5G"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12.5dp"
+        android:text="5G"
+        android:textColor="#fff"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:includeFontPadding="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/IVResultChartInfoLTE"
+        app:layout_constraintBottom_toBottomOf="@id/IVResultChartInfoLTE"
+        />
+
+    <ImageView
+        android:id="@+id/IVResultChartInfo5G"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="6.8dp"
+        android:src="@drawable/ic_circle_5g"
+        app:layout_constraintEnd_toStartOf="@id/TVResultChartInfo5G"
+        app:layout_constraintTop_toBottomOf="@id/CLResultGraphArea"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.02658161" />
+
+    <TextView
+        android:id="@+id/TVResultChartInfoWifi5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12.5dp"
+        android:text="WIFI 5"
+        android:textColor="#fff"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:includeFontPadding="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/IVResultChartInfo5G"
+        app:layout_constraintBottom_toBottomOf="@id/IVResultChartInfo5G"
+        />
+
+    <ImageView
+        android:id="@+id/IVResultChartInfoWifi5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="6.8dp"
+        android:src="@drawable/ic_circle_wifi5"
+        app:layout_constraintEnd_toStartOf="@id/TVResultChartInfoWifi5"
+        app:layout_constraintTop_toBottomOf="@id/CLResultGraphArea"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.02658161" />
+
+    <TextView
+        android:id="@+id/TVResultChartInfoWifi6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12.5dp"
+        android:text="WIFI 6"
+        android:textColor="#fff"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:includeFontPadding="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/IVResultChartInfoWifi5"
+        app:layout_constraintBottom_toBottomOf="@id/IVResultChartInfoWifi5"
+        />
+
+    <ImageView
+        android:id="@+id/IVResultChartInfoWifi6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="6.8dp"
+        android:src="@drawable/ic_circle_wifi6"
+        app:layout_constraintEnd_toStartOf="@id/TVResultChartInfoWifi6"
+        app:layout_constraintTop_toBottomOf="@id/CLResultGraphArea"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.02658161" />
+
+    <TextView
+        android:id="@+id/TVResultChartInfoWifi6e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12.5dp"
+        android:text="WIFI 6E"
+        android:textColor="#fff"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:includeFontPadding="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/IVResultChartInfoWifi6"
+        app:layout_constraintBottom_toBottomOf="@id/IVResultChartInfoWifi6"
+        />
+
+    <ImageView
+        android:id="@+id/IVResultChartInfoWifi6e"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginTop="6.8dp"
+        android:src="@drawable/ic_circle_wifi6e"
+        app:layout_constraintEnd_toStartOf="@id/TVResultChartInfoWifi6e"
+        app:layout_constraintTop_toBottomOf="@id/CLResultGraphArea"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_percent="0.02658161" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
